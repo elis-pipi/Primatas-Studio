@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primatas Brechó - Roupas Customizadas Streetwear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: linear-gradient(45deg, #000000, #512c2c, #922b2b, #ff1818);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER Y2K */
+        header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ffffff, #000000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #ff0000, #5c192c);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ff6b9d" stop-opacity="0.1"/><stop offset="100%" stop-color="%23c44569" stop-opacity="0"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23a)"><animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="80" r="1.5" fill="url(%23a)"><animate attributeName="r" values="1.5;2.5;1.5" dur="3s" repeatCount="indefinite" begin="0.5s"/></circle></svg>');
+            animation: sparkle 20s linear infinite;
+        }
+        @keyframes sparkle {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        .hero-content h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #a99566, #d2c6c6, #000000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px #000000); }
+            to { filter: drop-shadow(0 0 30px #3e3a2e); }
+        }
+        .hero-content p { 
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 18px 40px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #070002, #292627);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.9);
+            color: #c44569;
+            border: 2px solid #ff6b9d;
+        }
+        .btn-secondary:hover {
+            background: #ff6b9d;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        /* PRODUCTS */
+        .products {
+            padding: 120px 0 80px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5rem;
+            margin-bottom: 80px;
+            background: linear-gradient(45deg, #fff, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .product-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: all 0.4s;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 30px 80px rgba(255,107,157,0.3);
+        }
+        .product-image {
+            height: 300px;
+            background: linear-gradient(45deg, #ff6b9d, #ffd23f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        .product-card:hover .product-image::before {
+            left: 100%;
+        }
+        .product-info {
+            padding: 30px;
+            text-align: center;
+        }
+        .product-info h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #631717;
+        }
+        .product-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        .product-card .btn {
+            width: 100%;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: rgba(0,0,0,0.9);
+            color: white;
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .social-links a {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #001374, #000000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .social-links a:hover {
+            transform: scale(1.2) rotate(360deg);
+        }
+        
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .nav-links {
+                display: none;
+            }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">PRIMATAS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>PRIMATAS</h1>
+            <p>Revivendo e Customizando</p>
+            <div class="cta-buttons">
+                <a href="#products" class="btn btn-primary">Peças disponíveis</a>
+                <a href="#contact" class="btn btn-secondary">Fazer Pedido</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">COLEÇÃO EXCLUSIVA</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image"><img src="https://i.ibb.co/4RmzKG7z/IMG-20260406-WA0020.jpg" alt="IMG 20260406 WA0020" style="width: 100%; height: 250px; object-fit: cover"></style></div>
+                    <div class="product-info">
+                        <h3>Boné Trucker</h3>
+                        <div class="product-price">R$ 30</div>
+                        <button class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="https://i.ibb.co/4Zm1xGKX/IMG-20260406-WA0021.jpg" alt="IMG 20260406 WA0021" style="width: 100%; heigth: 250px; object-fit: cover;"></div>
+                    <div class="product-info">
+                        <h3>Polo Ralph Lauren Custom</h3>
+                        <div class="product-price">R$ 45</div>
+                        <button class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="https://i.ibb.co/93h2RSJc/IMG-20260406-WA0022.jpg" alt="IMG 20260406 WA0022" style="width: 100%; heigth: 250px; object-fit: cover;"></div>
+                    <div class="product-info">
+                        <h3>Capa de Isqueiro (un) </h3>
+                        <div class="product-price">R$ 20 </div>
+                        <button class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="https://i.ibb.co/jPZfnmPJ/IMG-20260406-WA0023.jpg" alt="IMG 20260406 WA0023" style="width: 100%; heigth: 250px; object-fit: cover;"></div>
+                    <div class="product-info">
+                        <h3>Camisa Gangster Smurf Custom</h3>
+                        <div class="product-price">R$ 30</div>
+                        <button class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 style="font-family: 'Orbitron', monospace; font-size: 2.5rem; margin-bottom: 20px;">
+                Quer sua peça customizada?
+            </h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Manda DM ou WhatsApp! Peças únicas  💎
+            </p>
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">📸</a>
+                <a href="#">💬</a>
+                <a href="#">✉️</a>
+            </div>
+            <p style="margin-top: 40px; opacity: 0.8;">© 2024 Primatas Brechó </p>
+        </div>
+    </footer>
+</body>
+</html>
